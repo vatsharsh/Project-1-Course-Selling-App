@@ -49,7 +49,7 @@ adminRouter.post("/signin", async function(req, res){
 });
 
 adminRouter.post("/course", adminMiddleware, async function(req, res){
-    const adminId = req.userId;
+    const adminId = req.adminId;
 
     const { title, description, imageUrl, price } = req.body;
 
