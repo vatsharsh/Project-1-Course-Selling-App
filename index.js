@@ -1,7 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
-const JWT_SECRET = "asdasdasd";
 
 const app = express();
 app.use(express.json());
