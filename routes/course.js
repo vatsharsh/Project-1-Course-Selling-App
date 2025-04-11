@@ -1,8 +1,9 @@
 const { Router } = require("express");
-const { courseModel } = require("../db");
+const { courseModel, purchaseModel } = require("../db");
+const { userMiddleware } = require("../middleware/user");
 const courseRouter = Router();
 
-courseRouter.post("/purchase", async function(req, res){
+courseRouter.post("/purchase", userMiddleware, async function(req, res){
     // You would expect the user to pay you money
     const userId = req.userId;
     const courseId = req.body.courseId;
